@@ -9,6 +9,13 @@ class student {
         string phone_number;
         double gpa;
     public:
+        student(string name, int id, int age, string phone_number, double gpa) {
+            this->name = name;
+            this->id = id;
+            this->age = age;
+            this->phone_number = phone_number;
+            this->gpa = gpa;
+        }
         // setter functions
         void set_name(string name){
             this-> name = name;
@@ -39,7 +46,7 @@ class student {
         string get_phone_number(){
             return phone_number;
         }
-        double get_gpa(double gpa){
+        double get_gpa(){
             return gpa;
         }
         
