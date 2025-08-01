@@ -1,7 +1,7 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-class teacher {
+class Teacher {
     private :
         string name;
         int id;
@@ -9,7 +9,7 @@ class teacher {
         string phone_number;
         double salary;
     public :
-        teacher(string name, int id, int age, string phone_number, double salary) {
+        Teacher(string name, int id, int age, string phone_number, double salary) {
             this->name = name;
             this->id = id;
             this->age = age;
