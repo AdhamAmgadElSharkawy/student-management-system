@@ -16,9 +16,11 @@ class Student_repository_implementation : public Student_repository{
         int add_student(Student student){
             if (index == 50){
                 cout << "full capacity of students"<<endl;
+                return 0;
             }else{
                 students[index]=student;
                 index++;
+                return 1;
             }
         }
 
