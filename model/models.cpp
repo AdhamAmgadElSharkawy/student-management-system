@@ -74,7 +74,7 @@ class Teacher : public Person {
 class Student : public Person{
     private:
         double gpa;
-        Teacher teachers[5];
+        vector<Teacher> teachers;
     public:
         Student(string name, int id, int age, string phone_number, double gpa) 
             : Person(name, id, age, phone_number)
@@ -85,19 +85,15 @@ class Student : public Person{
         void set_gpa(double gpa){
             this-> gpa=gpa;
         }
-        void set_teachers(Teacher teachers[5]){
-            for (int i = 0; i < 5; i++)
-            {
-                this->teachers[i]=teachers[i];
-            }
-            
+        void set_teachers(vector<Teacher>& teachers){
+            this->teachers= teachers;
         }
 
         // Getter functions
         double get_gpa(){
             return gpa;
         }
-        Teacher *get_teachers(){
+        vector <Teacher>& get_teachers(){
             return teachers;
         }
         
