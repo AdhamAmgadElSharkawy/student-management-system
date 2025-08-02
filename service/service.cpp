@@ -15,7 +15,7 @@ class Student_service_implementation : public Student_service{
 // course service
 class Course_service{
     public:
-        virtual int add_student(Student student) = 0;
+        virtual int add_course(Course course) = 0;
 };
 class Course_service_implementation : public Course_service{
     private:
