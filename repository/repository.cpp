@@ -1,7 +1,4 @@
 #include "../model/Models.cpp"
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
 ////////////// student repository interface
 class Student_repository{
     public:
