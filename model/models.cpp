@@ -94,11 +94,34 @@ class Teacher : public Person {
         }
 };
 
+// course model
+class Course : public public_data{
+    private :
+        int hour;
+        vector <int> student_IDs;
+    public:
+        // setter functions
+        void set_hour(int hour){
+            this-> hour = hour;
+        }
+        void set_student_IDs(vector<int>&student_IDs){
+            this->student_IDs=student_IDs;
+        }
+        // Getter functions
+        int get_hour(){
+            return hour;
+        }
+        vector<int>& get_student_IDs(){
+            return student_IDs;
+        }
+};
+
 // student model
 class Student : public Person{
     private:
         double gpa;
-        vector<Teacher> teachers;
+        vector<Teacher> Teachers;
+        vector<Course> Courses;
     public:
         // Constructors
         Student() : Person() {
@@ -114,29 +137,19 @@ class Student : public Person{
             this-> gpa=gpa;
         }
         void set_teachers(vector<Teacher>& teachers){
-            this->teachers= teachers;
+            this->Teachers= teachers;
         }
-
+        void set_courses(vector<Course>& courses){
+            this->Courses= courses;
+        }
         // Getter functions
         double get_gpa(){
             return gpa;
         }
         vector <Teacher>& get_teachers(){
-            return teachers;
+            return Teachers;
         }
-        
-};
-// course model
-class Course : public public_data{
-    private :
-        int hour;
-    public:
-        // setter functions
-        void set_hour(int hour){
-            this-> hour = hour;
-        }
-        // Getter functions
-        int get_hour(){
-            return hour;
+        vector <Course>& get_courses(){
+            return Courses;
         }
 };
