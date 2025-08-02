@@ -51,9 +51,10 @@ class Person {
 class Teacher : public Person {
     private :
         double salary;
+        vector <int> student_IDs;
     public :
-        Teacher(){
-
+        Teacher() : Person() {
+            salary = 0.0;
         }
         Teacher(string name, int id, int age, string phone_number, double salary)
            : Person(name, id, age, phone_number)
@@ -64,9 +65,15 @@ class Teacher : public Person {
         void set_salary(double salary){
             this->salary =salary;
         }
+        void set_student_IDs(vector<int>&student_IDs){
+                this->student_IDs=student_IDs;
+        }
         // Getter functions
         double get_salary(){
             return salary;
+        }
+        vector<int>& get_student_IDs(){
+            return student_IDs;
         }
 };
 
@@ -76,6 +83,11 @@ class Student : public Person{
         double gpa;
         vector<Teacher> teachers;
     public:
+        // Default Constructor
+        Student() : Person() {
+            gpa = 0.0;
+        }
+
         Student(string name, int id, int age, string phone_number, double gpa) 
             : Person(name, id, age, phone_number)
         {
