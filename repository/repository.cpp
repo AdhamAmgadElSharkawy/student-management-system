@@ -36,8 +36,7 @@ class Student_repository_implementation : public Student_repository{
                 
             }else{
                 student.set_id(data.id_student++);
-                data.students[data.index_student]=student;
-                data.index_student++;
+                data.students[data.index_student++]=student;
             }
             return student.get_id();
         }
@@ -51,18 +50,16 @@ class Course_repository{
 // course repository implementation
 class Course_repository_implementation : public Course_repository{
     private:
-        Course courses[50];
-        int index_course=0;
+        Data data;
     public:
         int add_course(Course course){
-            if (index_course == 50){
+            if (data.index_course == 50){
                 cout << "full capacity of courses"<<endl;
-                return 0;
             }else{
-                courses[index_course]=course;
-                index_course++;
-                return 1;
+                course.set_id(data.id_course++);
+                data.courses[data.index_course]=course;
             }
+            return course.get_id();
         }
 };
 ////////////// teacher repository interface
@@ -73,17 +70,15 @@ class Teacher_repository{
 // teacher repository implementation
 class Teacher_repository_implementation : public Teacher_repository{
     private:
-        Teacher teachers[50];
-        int index_teacher=0;
+        Data data;
     public:
         int add_teacher(Teacher teacher){
-            if (index_teacher == 50){
+            if (data.index_teacher == 50){
                 cout << "full capacity of courses"<<endl;
-                return 0;
             }else{
-                teachers[index_teacher]=teacher;
-                index_teacher++;
-                return 1;
+                teacher.set_id(data.id_teacher++);
+                data.teachers[data.index_teacher++]=teacher;
             }
+            return teacher.get_id();
         }
 };
