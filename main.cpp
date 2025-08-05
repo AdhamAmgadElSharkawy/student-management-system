@@ -50,8 +50,8 @@ int main(){
                 student.set_gpa(gpa);
                 Student_controller student_controller;
                 id = student_controller.add_student(student);
+                cout << "ID : "<<id<<endl;
             }
-            flag = 0;
         }else if(process==2){
             show_list("Teacher");
             flag = 0;

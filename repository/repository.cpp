@@ -1,4 +1,25 @@
 #include "../model/models.cpp"
+class Data{
+    public:
+        static Student students[50];
+        static int index_student;
+        static int id_student;
+        static Course courses[50];
+        static int index_course;
+        static int id_course;
+        static Teacher teachers[50];
+        static int index_teacher;
+        static int id_teacher;
+};
+Student Data::students[50];
+int Data::index_student=0;
+int Data::id_student=1;
+Course Data::courses[50];
+int Data::index_course=0;
+int Data::id_course=1;
+Teacher Data::teachers[50];
+int Data::index_teacher=0;
+int Data::id_teacher=1;
 ////////////// student repository interface
 class Student_repository{
     public:
@@ -7,18 +28,18 @@ class Student_repository{
 // student repository implementation
 class Student_repository_implementation : public Student_repository{
     private:
-        Student students[50];
-        int index=0;
+        Data data;
     public:
         int add_student(Student student){
-            if (index == 50){
+            if (data.index_student == 50){
                 cout << "full capacity of students"<<endl;
-                return 0;
+                
             }else{
-                students[index]=student;
-                index++;
-                return 1;
+                student.set_id(data.id_student++);
+                data.students[data.index_student]=student;
+                data.index_student++;
             }
+            return student.get_id();
         }
 
 };
@@ -31,15 +52,15 @@ class Course_repository{
 class Course_repository_implementation : public Course_repository{
     private:
         Course courses[50];
-        int index=0;
+        int index_course=0;
     public:
         int add_course(Course course){
-            if (index == 50){
+            if (index_course == 50){
                 cout << "full capacity of courses"<<endl;
                 return 0;
             }else{
-                courses[index]=course;
-                index++;
+                courses[index_course]=course;
+                index_course++;
                 return 1;
             }
         }
@@ -53,15 +74,15 @@ class Teacher_repository{
 class Teacher_repository_implementation : public Teacher_repository{
     private:
         Teacher teachers[50];
-        int index=0;
+        int index_teacher=0;
     public:
         int add_teacher(Teacher teacher){
-            if (index == 50){
+            if (index_teacher == 50){
                 cout << "full capacity of courses"<<endl;
                 return 0;
             }else{
-                teachers[index]=teacher;
-                index++;
+                teachers[index_teacher]=teacher;
+                index_teacher++;
                 return 1;
             }
         }
