@@ -9,6 +9,17 @@ class Student_service_implementation : public Student_service{
         Student_repository_implementation student_repository;
     public:
         int add_student(Student student){
+            if (student.get_name().size()==0||student.get_name().size()<5||student.get_name().size()>10){
+                cout << "Invalid name"<<endl;
+            }if (student.get_age()>30||student.get_age()<18){
+                cout << "invalid age"<<endl;
+            }if (student.get_phone_number()[0]!=0||
+                    ((student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'0'))&&
+                    (student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'1'))&&
+                    (student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'2'))&&
+                    (student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'5')))){
+                cout << "invalid phone number"<<endl;
+            }
             return student_repository.add_student(student);
         }
 };
