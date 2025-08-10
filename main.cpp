@@ -59,7 +59,9 @@ void add_teachers(){
 	teacher.set_salary(salary);
     Teacher_controller teacher_controller;
     int id = teacher_controller.add_teacher(teacher);
-    cout << "The teacher has been added with Id : "<<id<<endl;
+    if (id != -1){
+        cout << "The teacher has been added with Id : "<<id<<endl;
+    }
 }
 void add_courses(){
     Course course;
@@ -74,7 +76,9 @@ void add_courses(){
     course.set_hour(hour);
     Course_controller course_controller;
     int id = course_controller.add_course(course);
-    cout << "The course has been added with Id : "<<id<<endl;
+    if (id != -1){
+        cout << "The course has been added with Id : "<<id<<endl;
+    }
 }
 void student_chooses(){
     if (process==1){
