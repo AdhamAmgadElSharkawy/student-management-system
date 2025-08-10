@@ -4,6 +4,7 @@ class Student_service{
     public:
         virtual int add_student(Student student) = 0;
         virtual Student get_student_by_id(int id) = 0;
+        virtual int edit_student(Student student) = 0;
 };
 class Student_service_implementation : public Student_service{
     private:
@@ -30,13 +31,19 @@ class Student_service_implementation : public Student_service{
             }
             return student_result;
         }
-
+        int edit_student(Student student){
+            int index = student_repository.edit_student(student);
+            if (index == -1){
+                fcne.not_exist("student",student.get_id());
+            }
+        }
 };
 // course service
 class Course_service{
     public:
         virtual int add_course(Course course) = 0;
         virtual Course get_course_by_id(int id) = 0;
+        virtual int edit_course(Course course) = 0;
 };
 class Course_service_implementation : public Course_service{
     private:
@@ -63,12 +70,19 @@ class Course_service_implementation : public Course_service{
             }
             return course_result;
         }
+        int edit_course(Course course){
+            int index = course_repository.edit_course(course);
+            if (index == -1){
+                fcne.not_exist("course",course.get_id());
+            }
+        }
 };
 // teacher service
 class Teacher_service{
     public:
         virtual int add_teacher(Teacher teacher) = 0;
         virtual Teacher get_teacher_by_id(int id) = 0;
+        virtual int edit_teacher(Teacher teacher) = 0;
 };
 class Teacher_service_implementation : public Teacher_service{
     private:
@@ -94,5 +108,11 @@ class Teacher_service_implementation : public Teacher_service{
                 fcne.not_exist("teacher",id);
             }
             return teacher_result;
+        }
+        int edit_teacher(Teacher teacher){
+            int index = teacher_repository.edit_teacher(teacher);
+            if (index == -1){
+                fcne.not_exist("teacher",teacher.get_id());
+            }
         }
 };

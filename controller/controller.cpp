@@ -18,6 +18,9 @@ class Student_controller {
                 cout <<"GPA: "<<student_result.get_gpa()<<endl;
             }
         }
+        void update_student(Student student){
+            student_service.edit_student(student);
+        }
 };
 
 // Course_controller
@@ -36,7 +39,10 @@ class Course_controller {
                 cout <<"Id: "<<course_result.get_id()<<endl;
                 cout << "Credit Hours"<<course_result.get_hour()<<endl;
             }
-        }
+    }
+    void update_course(Course course){
+        course_service.edit_course(course);
+    }
 };
 
 // Teacher_controller
@@ -57,5 +63,8 @@ class Teacher_controller {
                 cout <<"Phone Number: "<<teacher_result.get_phone_number()<<endl;
                 cout <<"Salary: "<<teacher_result.get_salary()<<endl;
             }
-        }
+    }
+    void update_teacher(Teacher teacher){
+            teacher_service.edit_teacher(teacher);
+    }
 };
