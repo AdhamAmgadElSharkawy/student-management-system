@@ -32,7 +32,7 @@ class Student_repository_implementation : public Student_repository{
     public:
         int add_student(Student student){
             if (data.index_student == 50){
-                cout << "full capacity of students"<<endl;
+                return -1;
                 
             }else{
                 student.set_id(data.id_student++);
@@ -54,7 +54,7 @@ class Course_repository_implementation : public Course_repository{
     public:
         int add_course(Course course){
             if (data.index_course == 50){
-                cout << "full capacity of courses"<<endl;
+                return -1;
             }else{
                 course.set_id(data.id_course++);
                 data.courses[data.index_course]=course;
@@ -74,7 +74,7 @@ class Teacher_repository_implementation : public Teacher_repository{
     public:
         int add_teacher(Teacher teacher){
             if (data.index_teacher == 50){
-                cout << "full capacity of courses"<<endl;
+                return -1;
             }else{
                 teacher.set_id(data.id_teacher++);
                 data.teachers[data.index_teacher++]=teacher;

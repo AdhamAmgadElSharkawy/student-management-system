@@ -21,7 +21,7 @@ class Student_validation{
             return -1;
         }
 };
-class course_validation{
+class Course_validation{
     public:
         int validate_course(Course course){
             if (course.get_name().size() == 0){
@@ -32,5 +32,33 @@ class course_validation{
                 return 1;
             }
             return -1;
+        }
+};
+class Teacher_validation{
+    public:
+        int validate_Teacher(Teacher teacher){
+            if (teacher.get_name().size()==0||teacher.get_name().size()<5||teacher.get_name().size()>10){
+                cout << "Invalid name"<<endl;
+            }else if (teacher.get_age()>30||teacher.get_age()<18){
+                cout << "invalid age"<<endl;
+            }else if (teacher.get_phone_number()[0]!=0||
+                    ((teacher.get_phone_number()[1]+teacher.get_phone_number()[2] != ('1'+'0'))&&
+                    (teacher.get_phone_number()[1]+teacher.get_phone_number()[2] != ('1'+'1'))&&
+                    (teacher.get_phone_number()[1]+teacher.get_phone_number()[2] != ('1'+'2'))&&
+                    (teacher.get_phone_number()[1]+teacher.get_phone_number()[2] != ('1'+'5')))
+                    ||teacher.get_phone_number().size()!=11) {
+                cout << "invalid phone number"<<endl;
+            }else if (teacher.get_salary()<0||teacher.get_salary()>20000){
+                cout << "Invalid Salary"<<endl;
+            }else{
+                return 1;
+            }
+            return -1;
+        }
+};
+class Full_capasity{
+    public:
+        void full (string s){
+            cout << "full"<<s<<endl;
         }
 };
