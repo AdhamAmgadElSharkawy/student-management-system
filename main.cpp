@@ -10,8 +10,9 @@ void show_base_list(){
 void show_list(string thing){
     cout <<"                                  "<<thing<<"                                    "<<endl;
     cout << "     1- Add "<<thing<<"                          2- Remove "<<thing<<endl;
-    cout << "     3- Edit "<<thing<<"                         4- Show "<<thing<<endl;
-    cout << "                                  5-Exit                   " <<endl;
+    cout << "     3- Edit "<<thing<<"                         4- Show "<<thing<<"s"<<endl;
+    cout << "     5- show "<<thing<<" by id"<<endl;
+    cout << "                                  6-Exit                   " <<endl;
 }
 void add_students(){
     Student student;
@@ -90,7 +91,9 @@ void student_chooses(){
         }else if(process==4){
             cout << "show student"<<endl;
         }else if(process==5){
-                
+            cout << "show student by id"<<endl;
+        }else if(process==6) {
+            
         }else{
             cout << "invalid choose"<<endl;
         }
@@ -105,7 +108,9 @@ void teacher_chooses(){
         }else if(process==4){
             cout << "show teacher"<<endl;
         }else if(process==5){
-                
+            cout << "show teacher by id"<<endl;
+        }else if(process==6) {
+            
         }else{
             cout << "invalid choose"<<endl;
         }
@@ -120,7 +125,9 @@ void course_chooses(){
         }else if(process==4){
             cout << "show course"<<endl;
         }else if(process==5){
-                
+            cout << "show course by id"<<endl;
+        }else if(process==6) {
+            
         }else{
             cout << "invalid choose"<<endl;
         }

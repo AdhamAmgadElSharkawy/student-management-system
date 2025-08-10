@@ -6,14 +6,17 @@ class Student_validation{
                 cout << "Invalid name"<<endl;
             }else if (student.get_age()>30||student.get_age()<18){
                 cout << "invalid age"<<endl;
-            }else if (student.get_phone_number()[0]!=0||
-                    ((student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'0'))&&
-                    (student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'1'))&&
-                    (student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'2'))&&
-                    (student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'5')))
-                    ||student.get_phone_number().size()!=11) {
-                cout << "invalid phone number"<<endl;
-            }else if (student.get_gpa()>4 || student.get_gpa()<0){
+            }else if(student.get_phone_number()[0] != '0' ||
+						(
+						  (student.get_phone_number()[1] + student.get_phone_number()[2]) != ('1' + '1') &&
+						  (student.get_phone_number()[1] + student.get_phone_number()[2]) != ('1' + '2') &&
+						  (student.get_phone_number()[1] + student.get_phone_number()[2]) != ('1' + '0') &&
+						  (student.get_phone_number()[1] + student.get_phone_number()[2]) != ('1' + '5')
+					    ) 
+						|| student.get_phone_number().size() != 11
+					){ 
+				cout<<"Invalid Phone Number !"<<endl;
+			}else if (student.get_gpa()>4 || student.get_gpa()<0){
                 cout << "Invalid GPA"<<endl;
             }else{
                 return 1;
@@ -41,14 +44,17 @@ class Teacher_validation{
                 cout << "Invalid name"<<endl;
             }else if (teacher.get_age()>30||teacher.get_age()<18){
                 cout << "invalid age"<<endl;
-            }else if (teacher.get_phone_number()[0]!=0||
-                    ((teacher.get_phone_number()[1]+teacher.get_phone_number()[2] != ('1'+'0'))&&
-                    (teacher.get_phone_number()[1]+teacher.get_phone_number()[2] != ('1'+'1'))&&
-                    (teacher.get_phone_number()[1]+teacher.get_phone_number()[2] != ('1'+'2'))&&
-                    (teacher.get_phone_number()[1]+teacher.get_phone_number()[2] != ('1'+'5')))
-                    ||teacher.get_phone_number().size()!=11) {
-                cout << "invalid phone number"<<endl;
-            }else if (teacher.get_salary()<0||teacher.get_salary()>20000){
+            }else if(teacher.get_phone_number()[0] != '0' ||
+						(
+						  (teacher.get_phone_number()[1] + teacher.get_phone_number()[2]) != ('1' + '1') &&
+						  (teacher.get_phone_number()[1] + teacher.get_phone_number()[2]) != ('1' + '2') &&
+						  (teacher.get_phone_number()[1] + teacher.get_phone_number()[2]) != ('1' + '0') &&
+						  (teacher.get_phone_number()[1] + teacher.get_phone_number()[2]) != ('1' + '5')
+					    ) 
+						|| teacher.get_phone_number().size() != 11
+					){ 
+				cout<<"Invalid Phone Number !"<<endl;
+			}else if (teacher.get_salary()<0||teacher.get_salary()>20000){
                 cout << "Invalid Salary"<<endl;
             }else{
                 return 1;
