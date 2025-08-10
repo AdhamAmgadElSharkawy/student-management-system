@@ -34,7 +34,9 @@ void add_students(){
     student.set_gpa(gpa);
     Student_controller student_controller;
     int id = student_controller.add_student(student);
-    cout << "The student has been added with Id : "<<id<<endl;
+    if (id != -1){
+        cout << "The student has been added with Id : "<<id<<endl;
+    }
 }
 void add_teachers(){
     Teacher teacher;

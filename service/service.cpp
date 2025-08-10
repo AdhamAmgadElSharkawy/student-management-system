@@ -11,16 +11,21 @@ class Student_service_implementation : public Student_service{
         int add_student(Student student){
             if (student.get_name().size()==0||student.get_name().size()<5||student.get_name().size()>10){
                 cout << "Invalid name"<<endl;
-            }if (student.get_age()>30||student.get_age()<18){
+            }else if (student.get_age()>30||student.get_age()<18){
                 cout << "invalid age"<<endl;
-            }if (student.get_phone_number()[0]!=0||
+            }else if (student.get_phone_number()[0]!=0||
                     ((student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'0'))&&
                     (student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'1'))&&
                     (student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'2'))&&
-                    (student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'5')))){
+                    (student.get_phone_number()[1]+student.get_phone_number()[2] != ('1'+'5')))
+                    ||student.get_phone_number().size()!=11) {
                 cout << "invalid phone number"<<endl;
+            }else if (student.get_gpa()>4 || student.get_gpa()<0){
+                cout << "Invalid GPA"<<endl;
+            }else{
+                return student_repository.add_student(student);
             }
-            return student_repository.add_student(student);
+            return -1;
         }
 };
 // course service
