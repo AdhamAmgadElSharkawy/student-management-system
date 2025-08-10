@@ -97,7 +97,7 @@ class Teacher : public Person {
 // course model
 class Course : public public_data{
     private :
-        int hour;
+        double hour;
         vector <int> student_IDs;
     public:
         // setter functions

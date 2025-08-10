@@ -62,9 +62,12 @@ class Teacher_validation{
             return -1;
         }
 };
-class Full_capasity{
+class Full_capasity_or_not_exist{
     public:
         void full (string s){
             cout << "full"<<s<<endl;
+        }
+        void not_exist(string per , int id){
+            cout << "the "<<per<<" with id "<<id<<" Not exist"<<endl;
         }
 };

@@ -19,7 +19,8 @@ void add_students(){
     cout << "Please Enter Student Data"<< endl;
     cout << "Enter Student Name : ";
     string name;
-    cin >> name;
+    cin.ignore();
+    getline(cin, name);
     student.set_name(name);
     cout << "Enter Student Age : ";
     int age;
@@ -44,7 +45,8 @@ void add_teachers(){
     cout << "Please Enter teacher Data"<< endl;
     cout << "Enter teacher Name : ";
     string name;
-    cin >> name;
+    cin.ignore();
+    getline(cin, name);
     teacher.set_name(name);
     cout << "Enter teacher Age : ";
     int age;
@@ -69,7 +71,8 @@ void add_courses(){
     cout << "Please Enter course Data"<< endl;
     cout << "Enter course Name : ";
     string name;
-    cin >> name;
+    cin.ignore();
+    getline(cin, name);
     course.set_name(name);
     cout << "Enter course hour : ";
     double hour;
@@ -81,6 +84,27 @@ void add_courses(){
         cout << "The course has been added with Id : "<<id<<endl;
     }
 }
+void show_student_by_id (){
+    cout << "Enter Student Id: ";
+    int id;
+    cin >> id;
+    Student_controller student_show_byId;
+    student_show_byId.show_student_by_id(id);
+}
+void show_teacher_by_id (){
+    cout << "Enter Teacher Id: ";
+    int id;
+    cin >> id;
+    Teacher_controller teacher_show_byId;
+    teacher_show_byId.show_teacher_by_id(id);
+}
+void show_course_by_id (){
+    cout << "Enter course Id: ";
+    int id;
+    cin >> id;
+    Course_controller course_show_byId;
+    course_show_byId.show_course_by_id(id);
+}
 void student_chooses(){
     if (process==1){
             add_students();
@@ -91,7 +115,7 @@ void student_chooses(){
         }else if(process==4){
             cout << "show student"<<endl;
         }else if(process==5){
-            cout << "show student by id"<<endl;
+            show_student_by_id ();
         }else if(process==6) {
             
         }else{
@@ -108,7 +132,7 @@ void teacher_chooses(){
         }else if(process==4){
             cout << "show teacher"<<endl;
         }else if(process==5){
-            cout << "show teacher by id"<<endl;
+            show_teacher_by_id ();
         }else if(process==6) {
             
         }else{
@@ -125,7 +149,7 @@ void course_chooses(){
         }else if(process==4){
             cout << "show course"<<endl;
         }else if(process==5){
-            cout << "show course by id"<<endl;
+            show_course_by_id ();
         }else if(process==6) {
             
         }else{
