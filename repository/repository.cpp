@@ -90,7 +90,7 @@ class Course_repository_implementation : public Course_repository{
                 return -1;
             }else{
                 course.set_id(data.id_course++);
-                data.courses[data.index_course]=course;
+                data.courses[data.index_course++]=course;
             }
             return course.get_id();
         }

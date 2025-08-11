@@ -42,7 +42,7 @@ class Teacher_validation{
         int validate_Teacher(Teacher teacher){
             if (teacher.get_name().size()==0||teacher.get_name().size()<5||teacher.get_name().size()>10){
                 cout << "Invalid name"<<endl;
-            }else if (teacher.get_age()>30||teacher.get_age()<18){
+            }else if (teacher.get_age()<25){
                 cout << "invalid age"<<endl;
             }else if(teacher.get_phone_number()[0] != '0' ||
 						(

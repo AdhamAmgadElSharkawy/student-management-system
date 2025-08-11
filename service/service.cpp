@@ -36,7 +36,7 @@ class Student_service_implementation : public Student_service{
             if (index == -1){
                 fcne.not_exist("student",student.get_id());
             }else{
-                cout<<"Sucess Edit Student "<<endl;
+                cout<<"Sucess Edit Student With ID "<<student.get_id()<<endl;
             }
             return 0;
         }

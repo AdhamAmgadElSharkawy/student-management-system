@@ -37,7 +37,7 @@ class Course_controller {
             if(course_result.get_id() != -1){
                 cout<<"Name: "<<course_result.get_name()<<endl;
                 cout <<"Id: "<<course_result.get_id()<<endl;
-                cout << "Credit Hours"<<course_result.get_hour()<<endl;
+                cout << "Credit Hours "<<course_result.get_hour()<<endl;
             }
     }
     void update_course(Course course){
