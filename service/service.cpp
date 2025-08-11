@@ -35,7 +35,10 @@ class Student_service_implementation : public Student_service{
             int index = student_repository.edit_student(student);
             if (index == -1){
                 fcne.not_exist("student",student.get_id());
+            }else{
+                cout<<"Sucess Edit Student "<<endl;
             }
+            return 0;
         }
 };
 // course service
@@ -74,7 +77,10 @@ class Course_service_implementation : public Course_service{
             int index = course_repository.edit_course(course);
             if (index == -1){
                 fcne.not_exist("course",course.get_id());
+            }else{
+                cout<<"Sucess Edit Course With ID "<<course.get_id()<<endl;
             }
+            return 0;
         }
 };
 // teacher service
@@ -113,6 +119,9 @@ class Teacher_service_implementation : public Teacher_service{
             int index = teacher_repository.edit_teacher(teacher);
             if (index == -1){
                 fcne.not_exist("teacher",teacher.get_id());
+            }else{
+                cout<<"Sucess Edit Teacher Wit ID "<<teacher.get_id()<<endl;
             }
+            return 0;
         }
 };
