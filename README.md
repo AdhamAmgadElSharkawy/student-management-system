@@ -1,6 +1,6 @@
 # Student Management System
 
-A OOP (C++)-based console application designed to manage student data efficiently. It follows a clean architecture pattern with well-organized layers for separation of concerns.
+An OOP (C++)-based console application designed to manage student data efficiently. It follows a clean architecture pattern with well-organized layers for separation of concerns.
 
 ##  Project Structure
 
